@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "KFX0hMsOP3YE1jYHSqXbi1kOJ6zSQsZeg2SlOrXqpqHS7TshX0ZN9BseOalD+2s9xqyMJWmTqYPGgeXn91PX9A==",
+  "success": true,
+  "projectFilePath": "D:\\Metaverse\\C#\\ASP.NET CORE 5\\1-ASP.NET CORE 1\\WebApplication2\\WebApplication2.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\FERHAT\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\5.0.0\\microsoft.windowsdesktop.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\FERHAT\\.nuget\\packages\\microsoft.netcore.app.ref\\5.0.0\\microsoft.netcore.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\FERHAT\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\5.0.0\\microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\FERHAT\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.17\\microsoft.netcore.app.host.win-x64.5.0.17.nupkg.sha512"
+  ],
+  "logs": []
+}
