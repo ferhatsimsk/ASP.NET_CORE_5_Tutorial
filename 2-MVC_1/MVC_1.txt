@@ -1,0 +1,37 @@
+//MVC Mimarisi
+    //Model=> İşlenecek olan veriyi temsil eden katmandır.Genellikle veritabanı işlemlerinin yapıldığı katmandır.
+    //Entity Framework Core, Entity Models, Ado.Net, Repository, Veritabanı işlemleri.
+    //Datalar burada Modelin içerisinde tutulur.
+
+    //View
+    //İstek neticesinde elde edilen verileri görselleştirecek,görsel çıktısını verecek katmandır.
+    //HTML,CSS,JavaScript,Razor,Resim,Müzik,Video
+
+    //Controller
+    //Gelen requestleri karşılayacak olan ve request'in içeriğine göre gerekli model işlemlerini üstlenecek olan katmandır.
+    //Algoritmaları,servisleri,veritabanını vs. çağırarak/çalıştırarak/sorgulayarak istenilen veriyi üretmekten ve ihtiyaç dahilinde üretilen bu veriyi View ile görselleştirmekten sorumludur.
+    //İstek neticesinde elde edilen ve işlenen veriyi tekrar client'a response olarak döndürür.
+
+
+    //User Client aracılığıyla bir istekte bulunur ve bu isek contoller'a iletilir. Eğer veritabanı ihtiyacımız varsa veriler dış kaynaktan alınacaksa yahut bir model kullanılacaksa model'a gider. Model'da ilgili verileri (data)'yı Controller'a geri döndürür. İhtiyaç doğrultusunda Controller Modelden aldığı datayı View'e gönderir. View'de belirli bir görsel sunum hazırlanır. İlgili veriler daha anlamlı hale getirildi. Ve bu veriler yeniden Controller'a gönderildi. Controller'dan elde edilen sonuçlar Client'a gönderilir. Veri artık hazırdır.
+
+    //İsteğin mahiyetine göre model veya view'e gitmek zorunda değildir. 
+    //Eğer veritabanına ihtiyacımız yoksa,veriler dış kaynaktan alınmayacaksa yahut bir model kullanılmayacaksa model'a gitmek gerekmez.
+    //Aynı şekilde View kullanılmasına ihtiyaç yoksa View'e gitme zorunluluğu yoktur.
+    //Contoller isteği alır ve eğer model veya View' ihtiyaç yoksa kendisi direkt veriyi Client'a döndürür.
+
+    //View Controller dan aldığı veriyi işler ve render eder. Sonuçta View Result diye sonuç elde edilir. Ve bunu kontroller'a gönderir.Ve bu veri Client'a gönderilir Controllerdan.
+
+    //ASP.NET CORE MVC PIPELINE
+    //Request=>Kestrel(Sunucu)=>Middleware=>Routing=>Controller Inıtiallization=>Action Method Execution=>Result Execution=>View Rendering=>Kestrel=>Response
+
+    //Routing=> Gelen istek hangi mahiyette.(Kampanyalı ürünler)Rota burda belirlenir.
+    //Controller Inıtiallization=>İlgili kampanyalı ürünleri getirecek Controller'ı ayağa kaldırır. Controllerlar bizim için bir sınıftır
+    //Action Method Execution=> Bunlarda bizim için metottur. Contollerdaki isteği gerçekleştireck olan kısım.
+    //Result Execution=> Sonuç üetilecek. Ya bu eri direkt olarak Client'a gönderilecek (Data Result) 
+    //View Rendering(View Result)=> Yada view'e gönderilen veri Render edilir ve sonuç view result olarak Response edilir.
+    //Elde edilen veri ya direkt gönderilir yada view'e gönderir render edilir ve view result diye response edilir.
+	
+	//View dosyaları .cshtml uzantılı dosyalardır.
+	//cs+html=cshtml===> Razor(Html içerisinde C# kodlarını yazmamızı sağlayan bir teknolojidir.
+	
