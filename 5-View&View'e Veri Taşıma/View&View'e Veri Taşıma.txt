@@ -1,0 +1,21 @@
+//View => Controllerda karşılanan requestin görselleştirildiği katman/dosya.
+//.cshtml evrensel değildir.Asp.Net Core da kullanabilirsin sadece.
+//.cshtml View dosyalarımızın uzantısıdır.
+//Html'in içerisinde C# kodları yazmamızı sağlayan teknoloji Razor teknolojisidir.
+//View'ler Asp.Net Core projelerinde Views klasörü altında bulunurlar. Ve Controllerlardaki ilgili action klasör isimleriyle Views deki ilgili klasör isimleri aynı/karşılıklı olmalıdır.Çünkü mimamri bunu otomatik algılar ve tetikler.
+//View dosyasnın içinde home klasörünün altında action'a karşılık gelen gerekli view dosyasını oluşturmak için actionda sağ tık add view dedikten sonra ilgili action2nın adını yazıp ekleme yapabilirsin.
+//Controller veri oluşurulmasını sağlar.
+
+//ControllerDan View'e 4 farklı şekilde veri gönderebiliriz.
+//Model Bazlı Veri Gönderimi
+            //Bir veriyi View'e model bazlı göndereceksek View fonksiyonunu kullanmamız yeterli gelecektir.return View();
+            //return View(products);
+//ViewBag
+            //View' gönderilecek/taşınacak datayı dynamic şekilde tanımlanan bir değişkenle taşımamızı sağlayan bir veri taşıma kontrolüdür.
+			
+//ViewData
+            //ViewBag de olduğu action daki datayı view'e taşımamızı sağlayan bir kontroldür.
+            //ViewBag den farkı boxing ederek taşır.
+//TempData
+            //ViewData'da  olduğu action daki datayı view'e taşımamızı sağlayan bir kontroldür.
+			

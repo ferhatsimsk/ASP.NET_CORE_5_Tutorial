@@ -1,0 +1,10 @@
+﻿@*@model OrnekMVC_1.Models.ViewModels.UserProduct
+
+<h3>@Model.Product.ProductName</h3>
+<h3>@Model.User.Name</h3>*@
+
+<!--Tupple Nesnesi=> Referans olarak burda belirttik.-->
+@model (OrnekMVC_1.Models.Product p, OrnekMVC_1.Models.User u)
+
+<h3>@Model.p.ProductName</h3>
+<h3>@Model.u.Name</h3>

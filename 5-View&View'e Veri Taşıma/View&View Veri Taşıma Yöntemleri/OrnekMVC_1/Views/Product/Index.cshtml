@@ -1,0 +1,38 @@
+﻿@*<!--Modeldan gelecek bilgini türünü belirtmemiz gerekir.Aşağıdaki gibi-->
+@model List<OrnekMVC_1.Models.Product>
+
+<!--Yukarıda bildirdiğimiz datayı yakalamak için. Ve buradaki Model'in 'M' si büyüktür. Gelen datayı fiziksel olarak sana getirir.-->
+
+<!--Burada türü yakaladık ve veri üzerinde işlem yaptık.-->
+<ul>
+    @foreach (var product in Model)
+    {
+        <li>@product.ProductName</li>
+    }
+</ul>*@
+
+<!--Dynamic'te foreach döngüsünde bir şeyi çağırdığımızda hemen gelebilmesi için türünün belirli olmsı geekir.Bunuda as List<OrnekMVC_1.Models.Product> ile yaptık. product. dediğimizde yanında(ProductName) bişeyler gelmesi için yaptık. -->
+
+    <h3>ViewBag</h3>
+<ul>
+    @foreach (var product in ViewBag.products as List<OrnekMVC_1.Models.Product>)
+    {
+        <li>@product.ProductName</li>
+    }
+</ul>
+
+<h3>ViewData</h3>
+<ul>
+    @foreach (var product in ViewData["products"] as List<OrnekMVC_1.Models.Product>)
+    {
+        <li>@product.ProductName</li>
+    }
+</ul>
+
+<h3>TempData</h3>
+<ul>
+    @foreach (var product in TempData["products"] as List<OrnekMVC_1.Models.Product>)
+    {
+            <li>@product.ProductName</li>
+    }
+</ul>

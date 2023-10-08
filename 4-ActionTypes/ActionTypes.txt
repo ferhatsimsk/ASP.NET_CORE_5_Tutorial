@@ -1,0 +1,19 @@
+//Action Types=> 
+
+//View Result=> Response ıolarak bir view dosyasını(.cshtml) render etmemizi sağlayan action türüdür.
+
+//PartialViewResult=> Yine bir View dosyasını (.cshtml) render etmemizi sağlayan bir action türüdür.
+//PartialViewResult'ın ViewResult'tan temel farkı, client tabanlı yapılan Ajax isteklerinde kullanıma yatkın olmasıdır.
+//Web sayfasının genelini oluşturan ViewResult fakat belirli bir parçayı oluşturan ise PartialViewResult
+//Teknik farkı ise ViewResult_ViewStart.cshtml dosyasını baz alır. Lakin partialViewResult ise ilgili dosyayı baz almadan render edilir.
+
+//JsonResult=> Üretilen datayı JSON türüne dönüştürüp döndüren bir action türüdür.
+
+//EmptyResult=> Bazen gelen istekler neticesinde herhangi bir şey döndürmek istemeyebiliriz.Böyle bir durumda EmptyResult ation türü kullanılabilir.
+
+//ContentResult=> İstek neticesine cevap olarak metinsel bir değer döndürmemizi sağlayan action türüdür.(Ajax tabanlı işlemlerde daha sık kullanılırlar)
+
+//ViewComponentResult=> İsteğe cevap oalrak bir viewcomponent render etmemizi sağlayan action türüdür.
+
+//ActionResult=> Gelen bir istek neticesinde geriye döndürülecek action türleri değişkenlik gösterebildiği durumlarda kullanıldığı bir action türüdür.
+//ActionResult tüm action türlerini karşılayan ana türdür.

@@ -1,0 +1,82 @@
+//Projenin içinde View klasörü oluştur.
+//Controller'da Gerekli action'a ait view'i oluşturmak için action'ın olduğu yere sağ tık add view tıkla ardından ismine actionda kullandığın adı gir.
+//Oluşturulan view .cshtml'den oluşan bir yapıdır. Burada CSS yapacaksın.
+//Eğerki boş bir view eklemeyeceksen , Razor add dediğinde karşına çıkan ekranda yapacağın işleme göre Template seçmen gerekir.Ve kullanılacak model'ı bildirmem gerek. 
+
+//@ operatörü razor operatörüdür.
+//Controllerla View'e nasıl veri gönderilir / taşşınır?
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+//Model Bazlı Veri Gönderimi==> Controller(normalade model içerisindeki) içerisinde oluşturduğumuz veriyi direkt olarak göndermek için yazılan datanın altına return View(datanın adı) yazılarak gönderilebilir. return View(products);
+//View'e gelerek gelecek olan verinin türünü gelip ilgili view de (index) içerisinde belirtmemiz gerekir.Bunuda 
+//@model List<OrnekUygulama.Models.Product>   Gelen Data
+//Yukarıda bildirilen datayı View'de kullanabilmek için Örnek olarak;
+
+
+@model List<OrnekUygulama.Models.Product>
+//<ul>
+      @foreach(var product in Model)
+      {
+		<li>@product.ProductName</li>
+	  }     
+</ul>
+
+return View(products);
+
+
+//Yukarıdaki kulanımda Model 'in 'M' si büyük olacak.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+//ViewBag Veri taşıma Kontrolü
+
+  ViewBag.products = products;
+  
+  
+  <ul>
+      @foreach(var product in ViewBag as List<OrnekUygulama.Models.Product> ) 
+      {
+		<li>@product.ProductName</li>
+	  }     
+  </ul>
+
+   return View();
+
+//Türünün belli olması için foreach döngüsünde parantez içerisindeki yerde as List diye olan kısmı veriyoruz.Türünü belirttiğimizde aşağıda  product. dediğimiz zaman verilere ulaşabilirz.Aksi taktirde verileri göremeyiz.
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+//ViewData Veri Taşıma Kontrolü
+  
+  ViewData["products"] = products;
+  
+  <ul>
+      @foreach(var product in ViewData["products"] as List<OrnekUygulama.Models.Product> ) 
+      {
+		<li>@product.ProductName</li>
+	  }     
+  </ul>
+  
+  return View(); 
+  
+  as List<OrnekUygulama.Models.Product> yapısıyla burada bunu unboxing etmiş oluyoruz. Ve bu işlemş eğer ViewData kullanıyorsak yapmamız gerekiyor.
+  
+  -------------------------------------------------------------------------------------------------------------------------------------------------------------
+  
+  //TempData Veri Taşıma Kontrolü
+  
+  TempData["products"] = products;
+  
+  <ul>
+      @foreach(var product in TempData["products"] as List<OrnekUygulama.Models.Product> ) 
+      {
+		<li>@product.ProductName</li>
+	  }     
+  </ul>
+
+  return View(); 
+  
+  Bu veri taşıma kontrolü ile Response etmeden önce başka bir actiona yönlendirme yapılabiliyor.
+  -------------------------------------------------------------------------------------------------------------------------------------------------------------
+  
+  
