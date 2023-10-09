@@ -1,0 +1,3 @@
+//Razor Teknolojisi==>Asp.Net.Core MVC mimarisinde  cshtml dosyasında C# kodları yazmamızı sağlayan ve bu kodları serverda çalıştırmamızı sağlayan bir teknolojidir.
+//@ Operatörü razor operatörüdür. cshtml içerisinde @ dedikten sonra orada razor teknolojisi kullanılacak demektir.
+//Razor kodlarını @*....*@ şeklinde yorum satırı yapabiliyoruz.

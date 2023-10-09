@@ -1,0 +1,75 @@
+﻿@*@model OrnekMVC_1.Models.ViewModels.UserProduct
+
+
+@*RAZOR TEKNOLOJİSİ*@
+@*-------------------------------------------------------------------------------------------------------*@
+
+
+@*Razor ile Değişken oluşturma*@
+@{
+    string metin = "dsscdsdcsdc";
+}
+
+
+@*Razor ile değişken okuma*@
+@{
+    int a = 5;
+    Console.WriteLine(a);
+}
+
+@*Tek bir scope içeirisinde algılandığı için mesela aşağıda metin dediğimizde buna ulaşabiliyoruz.Fakat scope içerisinde scope verseydik o zaman erişemezdik.*@
+@*Razor ile Parçalı Scope Yapısı*@
+@{
+
+}
+
+@*Razor içerisinde html kodları yazmamıza izin veiyor olanak sağlıyor.*@
+@*Razor içerisinde HTML kullanımı*@
+@{
+    <div></div>
+}
+
+@*Metinsel bir değer basacaksak bu yöndetimi kullanabiliriz*@
+@*Razor içerisinde <text> etiketi*@
+@{
+    if (true)
+    {
+        <text>Evet</text>
+    }
+    else
+    {
+        <text>Hayır</text>
+    }
+
+}
+
+@*Razor ile tek satırlık işlemler*@
+@*Sayısal İşlemler*@
+<h3>@(5+3)</h3>
+<h3>@metin</h3>
+
+
+@*Ternary Operatörü*@
+<h3>@(33 % 5 == 3 ? "Evet" : "Hayır")</h3>
+
+@*İf yapılarını kullanırken razor için ayrıca bi scope açmamıza gerek yok.if'in scope'larını kendine kullanılır.*@
+@*Koşul Yapıları*@
+@{
+    int sayi = 5;
+    if (sayi==5)
+    {
+        <h3>sandna</h3>
+    }
+    else
+    {
+        
+    }
+}
+
+
+@*Döngüler kullanırken razor için ayrıca bi scope açmamıza gerek yok.Döngünün scope'larını kendine kullanılır.*@
+@*Dögüler*@
+@foreach (var item in collection)
+{
+    
+}  

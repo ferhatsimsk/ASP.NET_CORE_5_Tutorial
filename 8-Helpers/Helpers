@@ -1,0 +1,52 @@
+//Helpers==>Yardımcı metotlar
+
+//Url Helpers==>Asp.net Core MVC uygulamalarında url oluşturmak içn yardımcı metotlar içeren ve o anki url'e dair bizlere bilgi veren bir sınıftır.
+Metotlar:
+-Action Metodu==> Verilen Controller ve action'a ait url oluşturmayı sağlayan metottur.
+Bunu kullanmak için "Url.Action" dememiz yeterli.... Url.Action("index", "products", new{id=5}) ==> Hedef controller altında oluşturmak istediğimiz link. ve eğer parametre varsa bunuda ekleyebiliriz. /product/index/5
+-ActionLink==> Verilen Controller ve action'a ait url oluşturmayı sağlayan metottur.
+Bunu kullanmak için "Url.Action" dememiz yeterli.... Action metottan farkı host bilgisini protokol bilgisinide barındırır. Yani sitenin kendi adınıda taşıyacaktır.
+-Content Metodeu==> Genellikle CSS ve Script gibi dosya dizilerini programatik olarak tarif etmek için kullanmaktayız.(Çok fazla tercih edilen bir metot değil)
+Url.Content("~/site.css")
+-RouteUrl==> Mimaride tanımlı olan Route isimlerine uygun bir şekilde url oluşturan bir metottur.
+Url.RouteUrl("Default") ==> Sık kullanılan bir metot. Sistemde default ismine gelen şablon hangisiyse ona uygun url oluşturacak. /Product/GetProducts
+Propertyler:
+-ActionContext==> O anakş url'e dair tüm bilgilere erişebilmemizi sağlayan bir property'dir.
+Url.ActionContext dediğimizde gelen requestle ilgili bilgilere erişebilmemizi sağlar.
+
+//HTML Helpers ==> Html etiketlerini server tabanlı oluşturmamızı sağlayan sözde yardımcımetotları barındırmakta. ve hedelenen .cshtml dosyalarını render etmemizi sağlamakta. O anki context'e dair bilgiler edinmemizi sağlamakta. Veri taşıma kontrollerine erişmemizi sağlamakta.
+
+Metotlar:
+-Html.Partial ==> Hedef view'i render etmemizi sağlayan bir fonksiyondur. Gelen istek sonucunda render etmeyeceksin,bir viewdesin parial'la bunu çağırıp çıktısını oraya vedirebilirsin.İllaki bir controller'dan istek gitmesine gerek yok.
+<div style="border-top-color:ActionBorder">
+     @Html.Partial("~/Views/Product/Index.cshtml")
+</div>	 
+
+-Html.RenderPartial ==> Hedef view'i render etmemizi sağlayan bir fonksiyondur.
+<div style="border-top-color:ActionBorder">
+     @{Html.RenderPartial("~/Views/Product/Index.cshtml");}
+</div>
+Not: Html.RenderPartial sayfanın TextWriter'ını kullandığı için (yani Http response stream'e yazıldığı için) Html.Partial'a nazaran daha hızlı render işleminş yürütür. Dolayısıyla daha performanslıdır.
+
+-Html.ActionLink==> Url oluşturur. 
+@Html.ActionLink("Anasayfa", "Index", "Home")
+Hem çıktıyı verir hemde onun linkini oluşturur.(Tıklanabilir özelliği ,yani href,a tagı oluşur.)
+
+-Html form Metotları ==> Kullanıcıyla etkileşime girmemizi sağlayan form ve input nesneleri oluşturmamızı sağlayan metotlardır.
+@Html.BeginForm()
+@Html.CheckBox("cb")
+@Html.TextBox("txt")
+@Html.Display("display")
+@Html.Password("pwd")
+@Html.TextArea("area")
+@Html.ValidationMessage("vldt")
+--Çok önemli bir metot değil.
+--Tag Helpers'ları daha çok tercih edilmektedir.
+
+Property'ler:
+-ViewContext
+-TempData
+-ViewData
+-ViewBag
+
+//Tag Helpers
