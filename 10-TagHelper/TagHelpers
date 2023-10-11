@@ -1,0 +1,28 @@
+//Tag Helpers
+//Tag Helperslar view deki kod maaliyetini oldıkça düşürmektedir.
+//HtmlHelperslar daki programatik yapılanma, Programlama bilö-meyen tasarımcıların çalışasını imkansız hale getirmekteydi.Htl Helpreslar ile buradakş kusur giderildi ve tasarımcılar açısından programlama bilgisine ihtiyaç duymaksızın çalışma yapabilir nitelik kazandırıldı.
+//@addTagHelper*,Microsoft.AspNetCore.Mvc.TagHelpers ile view de eklememiz gerekiyor.(Kütüphaneyi)
+
+
+//Image TAgHelpers
+//Cachelenmiş bir dosya tekrar istenildiği taktirde bunun için server'a istek gönderilmez ve local cache üzerinden ilgili dosyanın cache'i gönderilir.Böylece sayfalar ilk açılışlarından sonraki taleplerde daha hızlı yüklenebilmektedir.
+//Lakin bazen dosya değişmeden içeriği değişebilmektedir. Böyle bir durumda ilgili dosyanın cache'den değil, serverdan yüklenmes gerekmektedir. Bu duruma biz ETag yöntemiyle müdahale edebilmekteyiz.
+//Asp.Net Core MVC mimarisinde TagHelpers'lar içerisinde static dosyalara etag yöntemini uygulayabilir ve dosyanın adı değişmesede içeriği değiştiği taktirde etag üzerinden değişikliği fark ederek ilgili dosyanın server'dan talep edileceği bilinebilektedir.
+
+<img src="~/resim.png" asp-append-version="true" />
+//Burada true olduğunda resimde herhangi bir değişiklik olduğunda bu değişikliği algılayıp ona göre sonuç döndürür.
+
+//Partial TagHelpers
+<partial name="~/Views/Product/Partials/ListPartial.cshtml" />
+
+//Remove TagHelpers
+//Tag Helper kullanmamız gerekmeyen view de gelip sayfa bazlı olarak remove Tag Helper diyerek o view de tag Helper kullanmayabiliriz.(O view için Pasif hale getirebiliriz)
+@add TagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@remove TagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<img src="~/resim.png" asp-append-version="true" />
+
+Bazen TagHelper ları tag seviyesinde de pasif hale getirmek isteyebiliriz bunun içinde "!" işareti kullanmamız yeterli.Aşağıdaki örnekteki gibi.
+<form asp-action="Index" asp-controller="Home"></form>
+<!form asp-action="Index" asp-controller="Home"></!form>

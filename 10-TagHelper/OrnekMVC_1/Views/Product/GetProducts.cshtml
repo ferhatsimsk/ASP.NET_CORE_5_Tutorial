@@ -1,0 +1,39 @@
+﻿@addTagHelper*,Microsoft.AspNetCore.Mvc.TagHelpers
+
+
+@*<!--Html mantığı-->
+@Html.BeginForm("Index","Product",FormMethod.Post);
+
+<!--Tag Helpers mantığı-->
+<!--Eğerki form yazıp içine as yazdığında gerisi doldurma şeklinde çıkıyorsa burada kütüphane aktftir ve çalışıyor yani doğru yazılmış demektir.-->
+<form asp-action="Index" asp-controller="Product" method="post">
+
+    @Html.TextBox("txtAdi")
+    <input type="text" asp-for="" />
+    <select>
+        <option value="value=">text</option>
+    </select>
+
+</form>
+*@
+
+
+
+<!--Cache(Önbellek) TagHelpers-->
+@*<cache>
+    Cache: @DateTime.Now
+</cache>
+<br />
+@DateTime.Now*@
+ 
+
+<!--Environment TagHelpers-->
+@*<environment names="Development">
+    <p>Development Ortamı</p>
+</environment>
+<environment names="Production, Staging">
+    <p>Production veya Staging Ortamı</p>
+</environment>*@
+
+
+<!--Image TagHelpers-->
