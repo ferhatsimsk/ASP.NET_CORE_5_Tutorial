@@ -1,0 +1,5 @@
+//Bir web uygulamasında form tetiklendiğinde içerisindeki inputların değerleri hedef endpointe gönderilir.(POST)
+//Request neticesinde gelen dataların hepsi Action fonksiyonlarda parametrelerden yakalanmaktadır.
+//formlarda kullandığımız inputlqrın name leri ile parametrenin içerisinde belirttiğimiz parametre adı aynı olmalı.
+//form içeriisndeki input nesneleri post edildiğinde bu nesnelere karşılık gelen propertyleri barındıran bir nesneyle otomatik olarak bind edilirler.
+

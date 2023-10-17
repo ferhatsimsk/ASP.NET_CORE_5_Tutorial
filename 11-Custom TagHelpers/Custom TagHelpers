@@ -1,0 +1,20 @@
+//Custom TagHelpers(Özel TagHelpers)
+//Her kullanman gereken yerde onu çağırıp kullanmak. İşi kolaylaştırmak
+//İhtiyacın olduğunda component mantığıyla kullanılan halperlar.
+//Bir sınıfın taghalper olabilmesi için taghelper sınıfından türemesi gerekir.
+//(using Micsoroft.AspNetCore.Razor.TagHelpers;)
+//İlgili taghalperın işlevsellik gösterebilmesi için yani operasyonu gerçekleştirebilmesi için override edilmesi gerekmektedir.
+//Bu override işleminde bize 2 tane parametre vermektedir.Bunlarda TaghelperContext context, TagHelperOutput output)
+
+public string Mail { get; set; }
+public string Display { get; set; }
+
+public override void Process(TaghelperContext context, TagHelperOutput output)
+{
+	output.TagName="a";
+	output.Attributes.Add("href", $"mailto:(Mail)");
+	output.Content.Append(Display);
+}
+
+//Context parametresinde ilgili taghelper'ı getirmektedir.
+//Output parametresi ilgili attribute'ün çıktısını bizlere vermektedir.

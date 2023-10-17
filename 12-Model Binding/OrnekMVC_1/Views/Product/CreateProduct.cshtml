@@ -1,0 +1,28 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@model OrnekMVC_1.Models.Product
+
+
+<form asp-action="CreateProduct" asp-asp-controller="Product" method="post">
+    
+    <input type="text" asp-for=ProductName placeholder="Product Name" />
+    <br />
+    <input type="number" asp-for=Quantity placeholder="Quantity" />
+    <br />
+    <button>Ürün Ekle</button>
+</form>
+
+@* @Html.TextBoxFor(x=> x.ProductName, "", new
+    {
+        placeholder="Product Name"
+    })*@
+@* @Html.TextBoxFor(x=> x.Quantity, "", new
+    {
+    placeholder="Quantity",
+    type="number"
+    })*@
+
+
+
+<!--Yukarıda model.OrnekMVC_1.Models.Product dediğimizde form içerisindeki name değerleri yerine asp-for deyip otomatik olarak değeri seçebiliyoruz.->
+    <!--Html.Textboxfor olan kısım html helperlarla yapılan kısım ama bunu taghelperlarla daha maliyetsiz kolay yapabiliyoruz.-->
