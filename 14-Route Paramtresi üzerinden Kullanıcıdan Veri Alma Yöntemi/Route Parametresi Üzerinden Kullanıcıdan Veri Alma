@@ -1,0 +1,4 @@
+Route Parametreler üzerinden Veri Alma
+/user?name=max
+/user/max
+//Güvenlikle alakalı bir fark vardır. Route veriyi daha gizli taşımayı sağlar.

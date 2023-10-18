@@ -1,0 +1,4 @@
+//Query String => Güvenlik gerektirmeyen bilgileerin url üzerinde taşınması için kullanılan yapılanmadır.
+//http://....com/sehir/ankara?ilce=2 --->=>ilce=2 verisi query stringtir.yada 2 yerine çankaya yazar.
+//Query String, yapılan requestin türü her ne olursa olsun query string değerleri taşınabilir.
+//url nin sonuna ? parametresi koyduktan sonra  bundan sonra query string parametrelerinizi tanımlayabilirsiniz.

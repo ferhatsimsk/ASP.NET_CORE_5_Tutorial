@@ -1,0 +1,19 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@model OrnekMVC_1.Models.Product
+
+<!--Route Parametresi ile ilgili -->
+
+<form asp-action="VeriAl" asp-controller="Product" method="post">
+    
+    <input type="text" asp-for=ProductName />
+    <br />
+    <input type="text" asp-for=Quantity />
+    <br />
+    <button>Gönder</button>
+</form>
+
+
+<a asp-action="Index" asp-controller="Home" asp-route-a="ahmet" asp-route-b="mehmet" asp-route-id="123" asp-route-x="asdasda">content</a>
+
+{controller=Home}/{action=Index}/{a}/{b}/{id}
