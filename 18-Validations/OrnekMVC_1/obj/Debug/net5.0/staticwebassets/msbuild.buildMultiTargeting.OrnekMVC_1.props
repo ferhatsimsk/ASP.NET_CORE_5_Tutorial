@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\OrnekMVC_1.props" />
+</Project>
