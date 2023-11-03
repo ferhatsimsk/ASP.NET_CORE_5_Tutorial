@@ -1,0 +1,8 @@
+//wwwroot klasörü açıyoruz projenin içerisinde
+//sonrasında içine jquery/ jquery-validate/ jquery-validation-unobtrusive kütüphanelerini ekliyoruz. Bu ekleme işleminide wwwroot klasörüne gelip sağ tık yapıp Client-Side-Library den install ediyoruz.
+//Sonrasında install ettiğimiz bu library'lerin içindeki 
+<script src="~/jquery/jquery.min.js"></script>
+<script src="~/jquery-validate/jquery.validate.min.js"></script>
+<script src="~/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+dosyalarını alıp hnagi cshtml de işlem yapıyorsak oraya kopyala yapıştır yapıyoruz. ve server tabanlı validation'ları client tabanlı olarak taşımaktayız.
+

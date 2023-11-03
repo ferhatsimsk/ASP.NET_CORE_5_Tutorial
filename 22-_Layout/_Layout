@@ -1,0 +1,33 @@
+@RenderBody() ==> Layout üzerinde o anki render edilen View'in result'unu nereye basılacağını ifade eden fonksiyondur.
+Neresinin her sayfada farklı şekilde olmasını istiyorsak oraya ekleriz.
+//Değişkenlik gösterecek kısmın neresi olduğunu gösterir
+//RenderBody() en az ve en fazla vir tane tanımlanabilir. Bunun aksi olamaz.
+
+//RenderSection ==> Layout içerisinde isimsel bölümler oluşturmamızı sağlar. İhtiyaç doğrultuusnda bu bölümlere render edilen view'lerden de içeriklerde atanabilir.
+//Genellikle JS referansları sayfadan sayfaya fark eden alanlarda kullanılır.
+//İlgili cshtml'de sadece o cshtml için .JS kütüphane kullanılacaksa bunu RenderSection() ile yapıyoruz.
+
+RenderBodykullanımını Layout'da tanımladıktan sonra ilgili Index'te gidip değerimizi verebiliyoruz.
+Ör: Bu sayfa Anasayfadır.
+
+
+
+//_Layout cshtml dosyasının içerisinde olacak olan yer. 
+ 
+<div class="row">
+<div class="col-md-2">
+@RenderSection("solmenu", false)
+</div>
+<div class="col-md-8">
+@RenderBody()
+</div>
+
+Yukarıda false vermemizin sebebi, her cshtml dosyasında Section eklemeyeceksek false vermemiz gerekiyor.Eğer false vermezsek hata verecektir.Yani her sayfaya Section ile birşey eklememiz gerekecektir.
+Eğer true olursa ya da default olarak bırakırsan bunu her cshtml'de kullanmak zorundasın.
+
+Index veya diğer cshtml de olacak olan yer
+
+@section solmenu{
+<h4>Reklam</h4>
+}
+
