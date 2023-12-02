@@ -1,0 +1,25 @@
+//_ViewStart.cshtml dosyası ==>
+Asıl amacı tüm view'lerde kullanılması yapılması gereken ortak çalışmaların yapıldığı view'dir.
+//_Layout dosyasını her view'de tanımlamak yerine ViewStart'da tanımlamamız yetiyor.
+//Ortak olan herşeyi burada belirtebiliriz.
+//Layout'un yolunu vermemiz yeterli olacaktır.
+
+//Eğerki ilgili sayfada layout'u kullanmayacaksak bunun için ilgili sayfada gelip 
+@{
+Layout=null;
+}
+değerini vermemiz yetiyor.
+
+//Eğer farklı bir layout kullanacaksan bir sayfada , oraya gelip kullanacağın layoutunun yolunu vermelisin.
+
+
+//_ViewImports.cshtml
+//Razor sayfaları için kütüphane ve namespace tanımlamalrını sayfa sayfa farklı tanımlamaktansa ortak/merkezi olarak tanımlamamızı sağlayan bir dosyadır.
+//Views klasörü altında _ViewImports.cshtml isminde oluşturulmalıdır.
+
+Ör: 
+@using LayoutExample.Models
+dediğimizde diğer dosyalarda gelip product dediğimizde otomatik olarak görüyor.
+Ör:
+@addTagHelpers *, Microsoft.AspNetCore.Mvc.TagHelpers
+dediğimizde her sayfada tag helperları tanımlamamıza gerek yok burada tanımlamazı diğer sayfalarda kullanmamızı sağlıyor.

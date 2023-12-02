@@ -1,0 +1,17 @@
+Moduler Tasarım Yapılanması:
+Partial View ==> Modeler tasarımda her bir modülün cshtml parça larak tasarlanmasını ve ihtiyaç doğrultusunda ilgili parçanın çağırılıp kullanılabilesini sağlayan bir yöntemdir.
+Hangi sayfayı modelleyeceksek o sayfanın view'inne geliyoruz (Örnek:Home View) bu view'de Partials adında bir klasör açıyoruz.
+Sonrasında açtığımız bu klasörün içerisinde view dosyası açıyoruz ve isimlendirme yaparkende kolaylık olması açısından "_HeaderPartial"(Headerla ilgili olduğu için) isimli view açıyoruz.
+
+Bunu 3 farklı yöntemle ana view'e render edebiliyoruz yani referans edebiliyoruz.
+Bunlar;
+--Partial ile :
+@Html.PArtial("~/Views/Home/Partials/_HeaderPartial.cshtml")
+
+--RenderPartial ile: 
+@{Html.RenderPartial("~/Views/Home/Partials/_HeaderPartial.cshtml");}
+
+Tag Helpers ile:
+<partial name="~/Views/Home/Partials/_HeaderPartial.cshtml" />
+Not==TagHelpers'ın sayfada yada projede tanımlı olmasına dikkat et,yoksa tanımladığın bu partial'ı görmeyecektir. _ViewImports dosyasında @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers şeklinde eklemiştik.Bunuda projenin tamamında etkili olamsı için yaptık.
+
